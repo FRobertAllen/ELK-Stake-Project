@@ -1,4 +1,3 @@
-```
 ---
 - name: Installing and Launch Filebeat
   hosts: webservers
@@ -35,4 +34,4 @@
     systemd:
       name: filebeat
       enabled: yes
-      ```
+      
