@@ -145,13 +145,14 @@ To verify success, wait five minutes to give ELK time to start up.
 Then, run: `curl http://135.59.7.85:5601`. This is the address of Kibana. If the installation succeeded, this command should print HTML to the console.
 
 As a Bonus, provide the specific commands the user will need to run to download the playbook, update the files, etc.
-```
+
   -------Filebeat---------
 
 - To create the filebeat-configuration.yml file: nano filebeat-configuration.yml. For this, I used the filebeat configuration file template.
 
-- To create the playbook: nano filebeat-playbook.yml
+- To create the playbook:```sudo nano filebeat-playbook.yml```
 
+```
   ---
  - name: installing and launching filebeat
 	   hosts: webservers
@@ -177,18 +178,20 @@ As a Bonus, provide the specific commands the user will need to run to download 
 
 	   - name: start filebeat service
   	    command: service filebeat start
----
--To run the playbook: ansible-playbook filebeat-playbook.yml
+```
 
-* In order to run the playbook, you have to be in the directory the playbook is at, or give the path to it (ansible-playbook /etc/ansible/roles/filebeat-playbook.yml
+-To run the playbook: ```ansible-playbook filebeat-playbook.yml```
+
+* In order to run the playbook, you have to be in the directory the playbook is at, or give the path to ```ansible-playbook /etc/ansible/roles/filebeat-playbook.yml```
 
 
 -------Metricbeat-------
 
 - To create the metricbeat-configuration.yml file: nano metricbeat-configuration.yml. For this, I used the metricbeat configuration file template.
 
-- To create the playbool: nano metricbeat-playbook.yml
+- To create the playbool:```sudo nano metricbeat-playbook.yml```
 
+```
 ---
   - name: installing and lunching metricbeat
     hosts: webservers
@@ -214,10 +217,10 @@ As a Bonus, provide the specific commands the user will need to run to download 
      
    - name: start metricbeat service
      command: service metricbeat start
-     
-   ---
-   
-   - To run the playbook: ansible-playbook metricbeat-playbook.yml
-   
-   * To order to run the playbook, you have to be in the directory the playbook is at, or give the path to it (ansible-playbook /etc/ansible/roles/metricbeat-playbook.yml
 ```
+
+   
+   - To run the playbook: ```ansible-playbook metricbeat-playbook.yml```
+   
+   * To order to run the playbook, you have to be in the directory the playbook is at, or give the path to ```ansible-playbook /etc/ansible/roles/metricbeat-playbook.yml```
+
